@@ -1,54 +1,66 @@
 
+class Animal {
 
-class BankAccount {
-
-    private double balance;
-
-    public double getBalance() {
-        return balance;
+    void eat() {
+        System.out.println("Eating");
     }
+}
 
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-        }
+class Dog extends Animal {
+
+    void bark() {
+        System.out.println("Barking");
     }
+}
 
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-        }
+class Vehicle {
+
+}
+
+class Engine {
+
+    void start() {
+        System.out.println("Engine started");
+    }
+}
+
+class Car {
+
+    Engine engine = new Engine();
+
+    void startCar() {
+        engine.start();
     }
 
     
 }
 
 
-class Student {
-    private int marks;
 
-    public void setMarks(int marks) {
 
-        if (marks >= 0 && marks <= 100) {
-            this.marks = marks;
-        } else {
-            System.out.println("Invalid marks");
-        }
-    }
-
-    public int getMarks() {
-        return marks;
+class Processor {
+    void process() {
+        System.out.println("Processing...");
     }
 }
 
+class Macbook {
+    Processor processor = new Processor();
+
+    void run(){
+        processor.process();
+    }
+}
+
+
 public class Main {
+
     public static void main(String[] args) {
-        
-        Student s1 = new Student();
+        Dog dog = new Dog();
+        Car car1 = new Car();
 
-       s1.setMarks(80);
-
-       System.out.println(s1.getMarks());
+        dog.eat();
+        dog.bark();
 
     }
 }
